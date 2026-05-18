@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+
+<body bgcolor="#fff0f5">
+
+    <br><br><br>
+
+    <center>
+
+        <table border="0" cellpadding="20" bgcolor="white" width="400">
+
+            <tr bgcolor="#87CEEB">
+                <td>
+                    <center>
+                        <font color="black">
+                            <h1>Create Account</h1>
+                        </font>
+                    </center>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+
+                    <form action="/register/" method="post">
+
+                        {% csrf_token %}
+
+                        <label><b>First Name</b></label><br>
+                        <input type="text" name="first_name" placeholder="Enter" size="45" required><br><br>
+
+                        <label><b>Last Name</b></label><br>
+                        <input type="text" name="last_name" placeholder="Enter" size="45" required><br><br>
+
+                        <label><b>Username</b></label><br>
+                        <input type="text" name="username" placeholder="Enter" size="45" required><br><br>
+
+                        <label><b>Email</b></label><br>
+                        <input type="email" name="email" placeholder="Enter" size="45" required><br><br>
+
+                        <label><b>Password</b></label><br>
+                        <input type="password" name="password1" placeholder="Enter" size="45" required><br><br>
+
+                        <label><b>Confirm Password</b></label><br>
+                        <input type="password" name="password2" placeholder="Enter" size="45" required><br><br>
+
+                        <center>
+                            <input type="submit" value="Register">
+                        </center>
+
+                    </form>
+
+                    <div>
+                        {% for message in messages %}
+                        <center>
+                            <h3 style="color:red;">{{message}}</h3>
+                        </center>
+                        {% endfor %}
+                    </div>
+
+                    <hr color="#ffb6c1">
+
+                    <center>
+                        <p>Already have an account?</p>
+                        <a href="/login">Login Here</a>
+                    </center>
+
+                </td>
+            </tr>
+
+        </table>
+
+    </center>
+
+</body>
+
+</html>
